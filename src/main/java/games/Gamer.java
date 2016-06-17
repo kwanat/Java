@@ -14,7 +14,7 @@ public abstract class Gamer implements endReaction {
 	public String getName(){
 		return this.name;
 	}
-	public String getSurame(){
+	public String getSurname(){
 		return this.surname;
 	}
 }

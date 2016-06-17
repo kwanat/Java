@@ -3,15 +3,15 @@ package games;
 import java.awt.event.ActionListener;
 
 import javax.swing.ButtonGroup;
-import javax.swing.DefaultListModel;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JScrollPane;
 import javax.swing.JTextField;
+
 
 import net.miginfocom.swing.MigLayout;
 
@@ -24,6 +24,9 @@ public class GameSelectView extends JFrame {
 	private JLabel surname;
 	private JLabel type;
 	private JLabel selectGame;
+	private JLabel selectValues;
+	private JLabel winValue;
+	private JLabel lostValue;
 	
 	private ButtonGroup playerType;
 
@@ -33,6 +36,8 @@ public class GameSelectView extends JFrame {
 
 	private JTextField playerName;
 	private JTextField playerSurname;
+	private JTextField winValueText;
+	private JTextField lostValueText;
 
 	private JButton submit;
 	private JButton coins;
@@ -58,10 +63,13 @@ public class GameSelectView extends JFrame {
 		mainPanel=new JPanel();
 		
 		headerText=new JLabel("Write your personal data");
-		name=new JLabel("Name");
-		surname=new JLabel("Surname");
+		name=new JLabel("Name:");
+		surname=new JLabel("Surname:");
 		type=new JLabel("Type: ");
 		selectGame=new JLabel("Select game to play");
+		selectValues= new JLabel("Select win/lost values");
+		winValue = new JLabel("Win value:");
+		lostValue= new JLabel("Lost value");
 		
 		playerType=new ButtonGroup();
 		
@@ -72,6 +80,8 @@ public class GameSelectView extends JFrame {
 		
 		playerName=new JTextField(10);
 		playerSurname=new JTextField(10);
+		winValueText=new JTextField(4);
+		lostValueText= new JTextField(4);
 		
 		submit= new JButton("SUBMIT");
 		coins = new JButton("COINS");
@@ -92,6 +102,11 @@ public class GameSelectView extends JFrame {
 		mainPanel.add(playerName);
 		mainPanel.add(surname, "split 2");
 		mainPanel.add(playerSurname,"wrap");
+		mainPanel.add(selectValues,"wrap");
+		mainPanel.add(winValue,"split 2");
+		mainPanel.add(winValueText,"wrap");
+		mainPanel.add(lostValue,"split 2");
+		mainPanel.add(lostValueText,"wrap");
 		mainPanel.add(type,"wrap");
 		
 		playerType.add(preschooler);
@@ -126,14 +141,34 @@ public class GameSelectView extends JFrame {
 			stones.setVisible(true);
 			hunting.setVisible(true);
 		}
+	
 	}
 	
 	String getGamerName(){
-		return name.getText();
+		return playerName.getText();
 	}
 	
 	String getGamerSurname(){
-		return surname.getText();
+		return playerSurname.getText();
+	}
+	int getWinValue(){
+		Integer parsedNumber = null;
+        try{
+        	parsedNumber = Integer.parseInt(winValueText.getText());
+        	return parsedNumber;
+        } catch (Exception exp) {
+			return 1;
+		}
+        
+	}
+	int getLostValue(){
+		Integer parsedNumber = null;
+		try{
+        	parsedNumber = Integer.parseInt(lostValueText.getText());
+        	return parsedNumber;
+		} catch (Exception exp) {
+			return -1;
+		}
 	}
 	
 	void addSubmitButtonListener(ActionListener listener){
