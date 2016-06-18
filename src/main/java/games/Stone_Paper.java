@@ -51,6 +51,24 @@ public class Stone_Paper extends Game{
 			}
 		}
 	}
+
+	@Override
+	String getfirstOption() {
+		// TODO Auto-generated method stub
+		return "ROCK";
+	}
+
+	@Override
+	String getsecoundOption() {
+		// TODO Auto-generated method stub
+		return "PAPER";
+	}
+
+	@Override
+	String getthirdOption() {
+		// TODO Auto-generated method stub
+		return "SCISSORS";
+	}
 	
 	
 

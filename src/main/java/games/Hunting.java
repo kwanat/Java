@@ -24,4 +24,22 @@ public class Hunting extends Game {
 		}
 	}
 
+	@Override
+	String getfirstOption() {
+		// TODO Auto-generated method stub
+		return "HARE";
+	}
+
+	@Override
+	String getsecoundOption() {
+		// TODO Auto-generated method stub
+		return "DEER";
+	}
+
+	@Override
+	String getthirdOption() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

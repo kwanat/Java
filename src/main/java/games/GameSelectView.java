@@ -27,6 +27,7 @@ public class GameSelectView extends JFrame {
 	private JLabel selectValues;
 	private JLabel winValue;
 	private JLabel lostValue;
+	private JLabel rounds;
 	
 	private ButtonGroup playerType;
 
@@ -38,6 +39,7 @@ public class GameSelectView extends JFrame {
 	private JTextField playerSurname;
 	private JTextField winValueText;
 	private JTextField lostValueText;
+	private JTextField numofRounds;
 
 	private JButton submit;
 	private JButton coins;
@@ -70,6 +72,7 @@ public class GameSelectView extends JFrame {
 		selectValues= new JLabel("Select win/lost values");
 		winValue = new JLabel("Win value:");
 		lostValue= new JLabel("Lost value");
+		rounds=new JLabel("Choose number of rounds:");
 		
 		playerType=new ButtonGroup();
 		
@@ -82,6 +85,7 @@ public class GameSelectView extends JFrame {
 		playerSurname=new JTextField(10);
 		winValueText=new JTextField(4);
 		lostValueText= new JTextField(4);
+		numofRounds= new JTextField(2);
 		
 		submit= new JButton("SUBMIT");
 		coins = new JButton("COINS");
@@ -102,9 +106,11 @@ public class GameSelectView extends JFrame {
 		mainPanel.add(playerName);
 		mainPanel.add(surname, "split 2");
 		mainPanel.add(playerSurname,"wrap");
-		mainPanel.add(selectValues,"wrap");
+		mainPanel.add(selectValues,"span 2");
+		mainPanel.add(rounds,"wrap");
 		mainPanel.add(winValue,"split 2");
-		mainPanel.add(winValueText,"wrap");
+		mainPanel.add(winValueText);
+		mainPanel.add(numofRounds,"wrap");
 		mainPanel.add(lostValue,"split 2");
 		mainPanel.add(lostValueText,"wrap");
 		mainPanel.add(type,"wrap");
@@ -168,6 +174,15 @@ public class GameSelectView extends JFrame {
         	return parsedNumber;
 		} catch (Exception exp) {
 			return -1;
+		}
+	}
+	int getnumofRValue(){
+		Integer parsedNumber = null;
+		try{
+        	parsedNumber = Integer.parseInt(numofRounds.getText());
+        	return parsedNumber;
+		} catch (Exception exp) {
+			return 0;
 		}
 	}
 	

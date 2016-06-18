@@ -7,5 +7,7 @@ public abstract class Game {
 	int computerChoice;
 	Random generator = new Random();
 	abstract void nextRound(int playerChoice, Gamer gamer, Values values);
-
+	abstract String getfirstOption();
+	abstract String getsecoundOption();
+	abstract String getthirdOption();
 }

@@ -13,12 +13,11 @@ public class GameSelectController {
 		this.view=view;
 		
 		view.addSubmitButtonListener(new submitButtonListener());
-		//dopisaæ dodawanie listenerów
+		view.addCoinButtonListener(new CoinsButtonListener());
+		view.addCirclesButtonListener(new CirclesButtonListener());
+		view.addHuntingButtonListener(new HuntingButtonListener());
+		view.addStonesButtonListener(new StonesButtonListener());
 	}
-	
-	
-	
-	
 	
 	
 	class submitButtonListener implements ActionListener{
@@ -36,11 +35,11 @@ public class GameSelectController {
 		int lost=view.getLostValue();
 		
 		try{
-		if(view.getGamerName().equals("")||view.getGamerSurname().equals("")||(win==0)&&(lost==0)){
+		if(view.getGamerName().equals("")||view.getGamerSurname().equals("")||(view.getnumofRValue()==0)){
 			throw new BlankField();
 		}
 			model.createNewPlayer(type, view.getGamerName(), view.getGamerSurname());
-			model.setPointsValues(win, lost);	
+			model.setPointsValues(win, lost,view.getnumofRValue());	
 			view.setVisiblegameChoosing(model.gamer);
 		}catch (BlankField e1){
 		}
@@ -48,6 +47,51 @@ public class GameSelectController {
 		
 	}
 	class BlankField extends Exception{
+		
+	}
+	
+	class CoinsButtonListener implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			model.createNewGame(1);
+			GamePlayView gameView=new GamePlayView();
+			GamePlayModel gameModel=new GamePlayModel(model.gamer,model.game,model.values);
+			GamePlayController gameController=new GamePlayController(gameView,gameModel);
+		}
+		
+	}
+	
+	class HuntingButtonListener implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			model.createNewGame(3);
+			GamePlayView gameView=new GamePlayView();
+			GamePlayModel gameModel=new GamePlayModel(model.gamer,model.game,model.values);
+			GamePlayController gameController=new GamePlayController(gameView,gameModel);
+		}
+		
+	}
+	
+	class StonesButtonListener implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			model.createNewGame(2);
+			GamePlayView gameView=new GamePlayView();
+			GamePlayModel gameModel=new GamePlayModel(model.gamer,model.game,model.values);
+			GamePlayController gameController=new GamePlayController(gameView,gameModel);
+		}
+		
+	}
+	
+	class CirclesButtonListener implements ActionListener{
+
+		public void actionPerformed(ActionEvent e) {
+			// TODO Auto-generated method stub
+			System.out.println("jeszcze nie gotowe");
+		}
 		
 	}
 

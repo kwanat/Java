@@ -4,10 +4,12 @@ public class Values {
 	int winValue;
 	int lostValue;
 	int computerScore;
+	int numberofRounds;
 	
-	Values(int win, int lost){
+	Values(int win, int lost,int rounds){
 		this.winValue=win;
 		this.lostValue=lost;
+		this.numberofRounds=rounds;
 		this.computerScore=0;
 	}
 	public void setValues(int win, int lost){

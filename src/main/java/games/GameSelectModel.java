@@ -19,8 +19,8 @@ public class GameSelectModel {
 	void createNewGame(int type){
 		game=fact2.createNewGame(type);
 	}
-	void setPointsValues(int win, int lost){
-		values=new Values(win,lost);
+	void setPointsValues(int win, int lost,int rounds){
+		values=new Values(win,lost,rounds);
 	}
 
 }

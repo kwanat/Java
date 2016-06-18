@@ -17,5 +17,23 @@ public class Coins extends Game{
 		
 	}
 
+	@Override
+	String getfirstOption() {
+		// TODO Auto-generated method stub
+		return "HEAD";
+	}
+
+	@Override
+	String getsecoundOption() {
+		// TODO Auto-generated method stub
+		return "TAIL";
+	}
+
+	@Override
+	String getthirdOption() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 
 }
