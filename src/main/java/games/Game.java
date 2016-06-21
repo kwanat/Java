@@ -10,4 +10,6 @@ public abstract class Game {
 	abstract String getfirstOption();
 	abstract String getsecoundOption();
 	abstract String getthirdOption();
+	abstract String getPlayerChoice(int choice);
+	abstract String getComputerChoice();
 }

@@ -21,7 +21,7 @@ public class Stone_Paper extends Game{
 				gamer.addPoints(values.getWinValue());
 			}
 				 
-			
+			break;
 		case 2:
 			if(computerChoice==1){
 				values.addComputerScore(values.getLostValue());
@@ -35,7 +35,7 @@ public class Stone_Paper extends Game{
 				values.addComputerScore(values.getWinValue());
 				gamer.addPoints(values.getWinValue());
 			}
-				
+			break;
 		case 3:
 			if(computerChoice==1){ 
 				values.addComputerScore(values.getWinValue());
@@ -49,6 +49,7 @@ public class Stone_Paper extends Game{
 				values.addComputerScore(values.getWinValue());
 				gamer.addPoints(values.getWinValue());
 			}
+			break;
 		}
 	}
 
@@ -68,6 +69,34 @@ public class Stone_Paper extends Game{
 	String getthirdOption() {
 		// TODO Auto-generated method stub
 		return "SCISSORS";
+	}
+
+	@Override
+	String getPlayerChoice(int choice) {
+		// TODO Auto-generated method stub
+		switch(choice){
+		case 1:
+			return this.getfirstOption();
+		case 2:
+			return this.getsecoundOption();
+		case 3:
+			return this.getthirdOption();
+		}
+		return null;
+	}
+
+	@Override
+	String getComputerChoice() {
+		// TODO Auto-generated method stub
+		switch(this.computerChoice){
+		case 1:
+			return this.getfirstOption();
+		case 2:
+			return this.getsecoundOption();
+		case 3:
+			return this.getthirdOption();
+		}
+		return null;
 	}
 	
 	

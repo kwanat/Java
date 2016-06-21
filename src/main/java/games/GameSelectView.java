@@ -18,6 +18,7 @@ import net.miginfocom.swing.MigLayout;
 public class GameSelectView extends JFrame {
 	
 	private JPanel mainPanel;
+
 	
 	private JLabel headerText;
 	private JLabel name;
@@ -28,6 +29,7 @@ public class GameSelectView extends JFrame {
 	private JLabel winValue;
 	private JLabel lostValue;
 	private JLabel rounds;
+
 	
 	private ButtonGroup playerType;
 
@@ -47,6 +49,7 @@ public class GameSelectView extends JFrame {
 	private JButton hunting;
 	private JButton circles;
 	
+	
 	public GameSelectView(){
 		this.setTitle("Game selecting frame");
 		this.setLocationRelativeTo(null);
@@ -56,6 +59,7 @@ public class GameSelectView extends JFrame {
 		addElementsToPanel();
 		
 		this.add(mainPanel);
+	
 		this.pack();
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
 		this.setVisible(true);
@@ -63,6 +67,7 @@ public class GameSelectView extends JFrame {
 	
 	private void elementsConfiguration(){
 		mainPanel=new JPanel();
+		
 		
 		headerText=new JLabel("Write your personal data");
 		name=new JLabel("Name:");
@@ -73,6 +78,7 @@ public class GameSelectView extends JFrame {
 		winValue = new JLabel("Win value:");
 		lostValue= new JLabel("Lost value");
 		rounds=new JLabel("Choose number of rounds:");
+	
 		
 		playerType=new ButtonGroup();
 		
@@ -98,6 +104,7 @@ public class GameSelectView extends JFrame {
 	private void layoutConfoguration(){
 		MigLayout mainPanelLayout=new MigLayout("","[grow,fill]");
 		mainPanel.setLayout(mainPanelLayout);
+		
 	}
 	
 	private void addElementsToPanel(){
@@ -128,7 +135,10 @@ public class GameSelectView extends JFrame {
 		mainPanel.add(circles);
 		mainPanel.add(coins);
 		mainPanel.add(stones);
-		mainPanel.add(hunting);
+		mainPanel.add(hunting,"wrap");
+		
+		
+		
 		
 		selectGame.setVisible(false);
 		circles.setVisible(false);
@@ -141,8 +151,11 @@ public class GameSelectView extends JFrame {
 		selectGame.setVisible(true);
 		circles.setVisible(true);
 		coins.setVisible(true);
+		stones.setVisible(false);
+		hunting.setVisible(false);
 		if(gamer instanceof Schoolboy)
 			stones.setVisible(true);
+			hunting.setVisible(false);
 		if(gamer instanceof Student){
 			stones.setVisible(true);
 			hunting.setVisible(true);
@@ -214,7 +227,8 @@ public class GameSelectView extends JFrame {
 	boolean isSelectedStudentOption(){
 		return student.isSelected();
 	}
-
+	
+	
 
 
 }
