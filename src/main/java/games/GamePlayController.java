@@ -16,6 +16,7 @@ public class GamePlayController {
 		this.view.addOption1ButtonListener(new Option1ActionListener());
 		this.view.addOption2ButtonListener(new Option1ActionListener());
 		this.view.addOption3ButtonListener(new Option1ActionListener());
+		this.view.addExitButtonListener(new exitButtonActionListener());
 	}
 	
 	
@@ -40,18 +41,26 @@ public class GamePlayController {
 				}
 				
 				model.currentRound++;
+				if(model.currentRound==model.values.numberofRounds+1){
+					//zakoñczenie gry
+					view.setPlayerReaction(model.getPlayerReaction(model.getWinner()));
+					view.showPlayerReaction();
+					model.clearScore();
+				}
 			}
-			else{
-				//tu trza jakoœ gre zakoñczyæ
-				System.out.println("koniec gry");
-				System.out.println(model.gamer.winReaction());
-				//view.showEndPanel();
-				view.dispose();
-			}
+			
 		}
+		
 		
 	}
 	
-	
+	class exitButtonActionListener implements ActionListener{
+
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			view.dispose();
+		}
+		
+	}
 
 }

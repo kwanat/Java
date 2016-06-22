@@ -16,7 +16,7 @@ public class MusicPlayer {
 		return instance;
 	}
 	public void playMusic() throws Exception{
-		File soundFile=new File("sound/abc.wav");
+		File soundFile=new File("abc.wav");
 		AudioInputStream audioinput=AudioSystem.getAudioInputStream(soundFile);
 		
 		Clip clip=AudioSystem.getClip();

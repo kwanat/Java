@@ -13,8 +13,7 @@ public class Coins extends Game{
 		else{
 			values.addComputerScore(values.getWinValue());
 			gamer.addPoints(values.getLostValue());
-		}
-		
+		}	
 	}
 
 	@Override

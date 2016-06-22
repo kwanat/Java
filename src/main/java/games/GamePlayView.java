@@ -2,21 +2,21 @@ package games;
 
 import java.awt.event.ActionListener;
 
-import javax.swing.ButtonGroup;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 
 import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
 
 import net.miginfocom.swing.MigLayout;
 
 public class GamePlayView extends JFrame{
+	
+	private static final long serialVersionUID = 1L;
+
 	private JPanel mainPanel;
-	//private JPanel endPanel;
+	
 	
 	public JButton option1;
 	public JButton option2;
@@ -47,8 +47,8 @@ public class GamePlayView extends JFrame{
 		this.add(mainPanel);
 		//this.mainPanel.setVisible(true);
 	
-		
-		this.pack();
+		this.setSize(350, 300);
+		//this.pack();
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setVisible(true);
 	}
@@ -118,6 +118,10 @@ public class GamePlayView extends JFrame{
 		option3.addActionListener(listener);
 	}
 	
+	void addExitButtonListener(ActionListener listener){
+		exitButton.addActionListener(listener);
+	}
+	
 	public void showPlayerReaction(){
 		this.playerReaction.setVisible(true);
 		//this.endPanel.setVisible(true);
@@ -125,10 +129,16 @@ public class GamePlayView extends JFrame{
 	public void setNewValues(int round, String players, String computers, int pScore, int cScore){
 		
 		playerScore.setText("Player Score: "+Integer.toString(pScore));
-		computerScore.setText("Computer Score: "+Integer.toOctalString(cScore));
+		computerScore.setText("Computer Score: "+Integer.toString(cScore));
 		playerChoice.setText("Player Choice: "+players);
 		computerChoice.setText("Computer Choice: "+computers);
 		currentRound.setText("Current Round: "+Integer.toString(round));
 	}
+	
+	public void setPlayerReaction(String reaction){
+		this.playerReaction.setText(reaction);
+	}
+	
+	
 
 }

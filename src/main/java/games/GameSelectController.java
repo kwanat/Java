@@ -2,7 +2,6 @@ package games;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.FileNotFoundException;
 
 public class GameSelectController {
 	private GameSelectView view;
@@ -47,6 +46,11 @@ public class GameSelectController {
 		
 	}
 	class BlankField extends Exception{
+
+		/**
+		 * 
+		 */
+		private static final long serialVersionUID = 1L;
 		
 	}
 	
@@ -57,6 +61,7 @@ public class GameSelectController {
 			model.createNewGame(1);
 			GamePlayView gameView=new GamePlayView();
 			GamePlayModel gameModel=new GamePlayModel(model.gamer,model.game,model.values);
+			@SuppressWarnings("unused")
 			GamePlayController gameController=new GamePlayController(gameView,gameModel);
 		}
 		
@@ -69,6 +74,7 @@ public class GameSelectController {
 			model.createNewGame(3);
 			GamePlayView gameView=new GamePlayView();
 			GamePlayModel gameModel=new GamePlayModel(model.gamer,model.game,model.values);
+			@SuppressWarnings("unused")
 			GamePlayController gameController=new GamePlayController(gameView,gameModel);
 		}
 		
@@ -81,6 +87,7 @@ public class GameSelectController {
 			model.createNewGame(2);
 			GamePlayView gameView=new GamePlayView();
 			GamePlayModel gameModel=new GamePlayModel(model.gamer,model.game,model.values);
+			@SuppressWarnings("unused")
 			GamePlayController gameController=new GamePlayController(gameView,gameModel);
 		}
 		
@@ -90,7 +97,9 @@ public class GameSelectController {
 
 		public void actionPerformed(ActionEvent e) {
 			// TODO Auto-generated method stub
-			System.out.println("jeszcze nie gotowe");
+			@SuppressWarnings("unused")
+			TicTacToe game=new TicTacToe(model.gamer, model.values);
+			
 		}
 		
 	}

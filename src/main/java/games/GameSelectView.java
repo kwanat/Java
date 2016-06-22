@@ -7,7 +7,6 @@ import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
-import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
@@ -17,6 +16,10 @@ import net.miginfocom.swing.MigLayout;
 
 public class GameSelectView extends JFrame {
 	
+	
+	private static final long serialVersionUID = 1L;
+
+
 	private JPanel mainPanel;
 
 	

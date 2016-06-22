@@ -13,6 +13,7 @@ public class Main {
 		}
 		GameSelectView firstview= new GameSelectView(); 
 		GameSelectModel firstmodel= new GameSelectModel();
+		@SuppressWarnings("unused")
 		GameSelectController controller = new GameSelectController(firstview,firstmodel);
 
 	}
