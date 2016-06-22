@@ -56,7 +56,7 @@ public class GameSelectView extends JFrame {
 	public GameSelectView(){
 		this.setTitle("Game selecting frame");
 		this.setLocationRelativeTo(null);
-		//pozosta³e funkcyje konstruktora;
+		
 		elementsConfiguration();
 		layoutConfoguration();
 		addElementsToPanel();
@@ -120,7 +120,7 @@ public class GameSelectView extends JFrame {
 		mainPanel.add(rounds,"wrap");
 		mainPanel.add(winValue,"split 2");
 		mainPanel.add(winValueText);
-		mainPanel.add(numofRounds,"wrap");
+		mainPanel.add(numofRounds,"cell 2 3,wrap");
 		mainPanel.add(lostValue,"split 2");
 		mainPanel.add(lostValueText,"wrap");
 		mainPanel.add(type,"wrap");

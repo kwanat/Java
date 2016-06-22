@@ -3,7 +3,7 @@ package games;
 public class Values {
 	int winValue;
 	int lostValue;
-	int computerScore;
+	int computerScore=0;
 	int numberofRounds;
 	
 	Values(int win, int lost,int rounds){

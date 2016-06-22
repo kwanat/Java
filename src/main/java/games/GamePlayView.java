@@ -37,34 +37,29 @@ public class GamePlayView extends JFrame{
 	public GamePlayView(){
 		this.setTitle("Game selecting frame");
 		this.setLocationRelativeTo(null);
-		//pozosta³e funkcyje konstruktora;
+		
 		elementsConfiguration();
 		layoutConfiguration();
 		addElementsToPanel();
-		
-		//this.add(endPanel);
-		//this.endPanel.setVisible(true);
+	
 		this.add(mainPanel);
-		//this.mainPanel.setVisible(true);
 	
 		this.setSize(350, 300);
-		//this.pack();
+		
 		this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 		this.setVisible(true);
 	}
 	private void elementsConfiguration(){
 		mainPanel=new JPanel();
-		//endPanel=new JPanel();
+		
 		
 		headerText=new JLabel("Make your choice: ");
 		playerScore= new JLabel("Player Score: ");
 		computerScore= new JLabel("Computer Score");
 		playerReaction= new JLabel("sadgfasd");
-		playerChoice = new JLabel("Player CHoice");
+		playerChoice = new JLabel("Player Choice");
 		computerChoice = new JLabel("Computer Choice");
 		currentRound = new JLabel("Current Round");
-		
-		
 		
 		option1=new JButton("option1");
 		option2=new JButton("option2");
@@ -77,7 +72,7 @@ public class GamePlayView extends JFrame{
 	private void layoutConfiguration(){
 		MigLayout mainPanelLayout=new MigLayout("","[grow,fill]");
 		mainPanel.setLayout(mainPanelLayout);
-		//endPanel.setLayout(mainPanelLayout);
+	
 	}
 	
 	private void addElementsToPanel(){
